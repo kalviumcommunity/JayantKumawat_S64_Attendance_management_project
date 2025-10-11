@@ -1,4 +1,6 @@
 package com.school;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +27,24 @@ public class Main {
         System.out.println("\n---- Courses ----");
         for (Course c : courses) {
             c.displayDetails();
+        }
+
+        // Attendance logging using encapsulated IDs
+        System.out.println("\n---- Attendance Records ----");
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
+
+        // Valid statuses
+        attendanceLog.add(new AttendanceRecord(students[0].getStudentId(), courses[0].getCourseId(), "Present"));
+        attendanceLog.add(new AttendanceRecord(students[1].getStudentId(), courses[1].getCourseId(), "Absent"));
+
+        // Case-insensitive allowed
+        attendanceLog.add(new AttendanceRecord(students[2].getStudentId(), courses[2].getCourseId(), "present"));
+
+        // Invalid status to trigger validation
+        attendanceLog.add(new AttendanceRecord(students[3].getStudentId(), courses[0].getCourseId(), "Late"));
+
+        for (AttendanceRecord r : attendanceLog) {
+            r.displayRecord();
         }
     }
 }
