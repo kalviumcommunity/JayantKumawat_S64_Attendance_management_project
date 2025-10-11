@@ -1,32 +1,27 @@
 package com.school;
 
 public class Course {
-    private String code;
-    private String title;
-    private int credits;
+    private static int nextCourseIdCounter = 101;
+    private int courseId;
+    private String courseName;
 
-    // Constructor
-    public Course(String code, String title, int credits) {
-        this.code = code;
-        this.title = title;
-        this.credits = credits;
+    // Constructor for auto ID generation
+    public Course(String courseName) {
+        this.courseId = nextCourseIdCounter++;
+        this.courseName = courseName;
     }
 
     // Getter methods
-    public String getCode() {
-        return code;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public int getCredits() {
-        return credits;
+    public String getCourseName() {
+        return courseName;
     }
 
     // Method to display course details
-    public void displayCourse() {
-        System.out.println("Course Code: " + code + ", Title: " + title + ", Credits: " + credits);
+    public void displayDetails() {
+        System.out.println("Course ID: C" + courseId + ", Name: " + courseName);
     }
 }
