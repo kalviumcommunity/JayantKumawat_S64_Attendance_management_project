@@ -1,0 +1,4 @@
+1,Jayant,Freshman
+2,Aman,Sophomore
+3,Riya,Junior
+4,Kunal,Senior
