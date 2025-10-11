@@ -2,15 +2,18 @@ package com.school;
 
 public class Main {
     public static void main(String[] args) {
-        // Array of Students
-        Student[] students = new Student[2];
-        students[0] = new Student(1, "Jayant", 20);
-        students[1] = new Student(2, "Aman", 21);
+        // Array of Students (auto-generated IDs)
+        Student[] students = new Student[4];
+        students[0] = new Student("Jayant");
+        students[1] = new Student("Aman");
+        students[2] = new Student("Riya");
+        students[3] = new Student("Kunal");
 
-        // Array of Courses
-        Course[] courses = new Course[2];
-        courses[0] = new Course("CSE101", "Object Oriented Programming", 4);
-        courses[1] = new Course("CSE102", "Data Structures", 3);
+        // Array of Courses (auto-generated IDs)
+        Course[] courses = new Course[3];
+        courses[0] = new Course("Object Oriented Programming");
+        courses[1] = new Course("Data Structures");
+        courses[2] = new Course("Algorithms");
 
         // Display Students
         System.out.println("---- Students ----");
@@ -21,7 +24,7 @@ public class Main {
         // Display Courses
         System.out.println("\n---- Courses ----");
         for (Course c : courses) {
-            c.displayCourse();
+            c.displayDetails();
         }
     }
 }

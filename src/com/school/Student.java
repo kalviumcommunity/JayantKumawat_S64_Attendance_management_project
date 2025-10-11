@@ -1,32 +1,27 @@
 package com.school;
 
 public class Student {
-    private int id;
+    private static int nextStudentIdCounter = 1;
+    private int studentId;
     private String name;
-    private int age;
 
-    // Constructor
-    public Student(int id, String name, int age) {
-        this.id = id;
+    // Constructor for auto ID generation
+    public Student(String name) {
+        this.studentId = nextStudentIdCounter++;
         this.name = name;
-        this.age = age;
     }
 
     // Getter methods
-    public int getId() {
-        return id;
+    public int getStudentId() {
+        return studentId;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
     // Method to display student details
     public void displayStudent() {
-        System.out.println("Student ID: " + id + ", Name: " + name + ", Age: " + age);
+        System.out.println("Student ID: " + studentId + ", Name: " + name);
     }
 }
