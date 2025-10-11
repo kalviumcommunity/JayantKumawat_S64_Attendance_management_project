@@ -32,6 +32,21 @@
 - Demonstrated creation and display of `Student`, `Teacher`, and `Staff` objects in `Main.java`.
 - Updated `AttendanceRecord` creation to use the inherited `getId()` method.
 
+## Part 6: Interface-Driven Persistence with Storage
+- Defined a `Storable` interface with a `toDataString()` method.
+- Modified `Student`, `Course`, and `AttendanceRecord` to implement `Storable` and output CSV lines via `toDataString()`.
+- Created `FileStorageService` with `saveData(List<? extends Storable> items, String filename)` that writes items to files using try-with-resources (`PrintWriter`, `FileWriter`).
+- Updated `Main.java` to build lists and save to `students.txt`, `courses.txt`, and `attendance_log.txt`.
+
+### How to Run (Part 6)
+1. Navigate to the project root directory.
+2. Compile: `javac src/com/school/*.java`
+3. Run: `java -cp src com.school.Main`
+4. Verify generated files in the project root:
+   - `students.txt`
+   - `courses.txt`
+   - `attendance_log.txt`
+
 ### How to Run
 1. Navigate to the project root directory.
 2. Compile: `javac src/com/school/*.java` (or list individual files including `AttendanceRecord.java`)

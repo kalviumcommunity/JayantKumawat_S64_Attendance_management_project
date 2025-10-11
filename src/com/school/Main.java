@@ -52,5 +52,22 @@ public class Main {
         for (AttendanceRecord r : attendanceLog) {
             r.displayRecord();
         }
+
+        // Prepare lists for persistence
+        List<Student> studentList = new ArrayList<>();
+        for (Student s : students) {
+            studentList.add(s);
+        }
+
+        List<Course> courseList = new ArrayList<>();
+        for (Course c : courses) {
+            courseList.add(c);
+        }
+
+        // Save to files using FileStorageService
+        FileStorageService storage = new FileStorageService();
+        storage.saveData(studentList, "students.txt");
+        storage.saveData(courseList, "courses.txt");
+        storage.saveData(attendanceLog, "attendance_log.txt");
     }
 }
